@@ -1,8 +1,10 @@
 {
     "version": 2,
-    "public": true,
     "builds": [
-        { "use": "@vercel/static-build", "src": "package.json"}
+        {
+            "src": "src/main.ts",
+            "use": "@vercel/node"
+        }
     ],
     "routes": [
         {
@@ -15,5 +17,8 @@
                 "DELETE"
             ]
         }
-    ]
+    ],
+    "scripts": {
+        "build": "nest build --output public"
+      }
 }
